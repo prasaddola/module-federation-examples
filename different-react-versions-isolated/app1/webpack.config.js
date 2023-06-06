@@ -30,6 +30,11 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'app1',
+      library: { type: 'var', name: 'app1' },
+      filename: 'remoteEntry.js',
+      exposes: {
+        './App': "./src/App"
+      },
       remotes: {
         app2: `app2@${getRemoteEntryUrl(3002)}`,
       },

@@ -33,6 +33,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './appInjector': './src/appInjector',
+        './App': "./src/App"
       },
     }),
     new HtmlWebpackPlugin({
